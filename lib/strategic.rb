@@ -31,6 +31,8 @@ module Strategic
       klass.include(ExtraRubyMethods)
     end
     klass.default_strategy 'default'
+  rescue Exception
+    # abort so it doesn't fuck with migrations and other database operations
   end
   
   module ExtraRailsMethods
